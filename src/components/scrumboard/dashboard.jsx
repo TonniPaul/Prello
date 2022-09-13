@@ -9,7 +9,8 @@ export default class Dashboard extends Component {
 
     this.state = {
       data: Data,
-      isOpen: false
+      isOpen: false,
+      task: null
     }
   }
 
@@ -23,6 +24,19 @@ export default class Dashboard extends Component {
       isOpen: false
     })
   }
+
+  handleChange = (e) => {
+    this.setState({
+      task: e.target.value
+    })
+  }
+
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.setState({
+      isOpen: false
+    })
+  }
   
   render() {
     return (
@@ -32,7 +46,7 @@ export default class Dashboard extends Component {
         return(
           <div>
             <nav key={key} className='nav'>
-              <h1>TonniPaul web</h1>
+              <h1>ChatScrum</h1>
               <div>
                 <p>User Type:{input.userType}</p>
                 <p>Project Name:{input.projectName}</p>
@@ -45,6 +59,7 @@ export default class Dashboard extends Component {
               <div className='card-div ' >
                 <div className='card'>
                   <h3 className='card--header'> Weekly Tasks</h3>
+                  <p className='task-text'>{this.state.task}</p>
                 </div>
 
                 <div className='card'>
@@ -55,12 +70,11 @@ export default class Dashboard extends Component {
             <div id='modal' className={this.state.isOpen ? 'show' : 'hidden' }>
               <div className='modal-header'>
                 <h3>Add a new task</h3>
-                {/* <h3 className='x' onClick={() => this.closeModal()}>X</h3> */}
                 <h3 className='x' onClick={this.closeModal}>X</h3>
               </div>
               <form>
-                <input type='text' className='modal-input'/>
-                <button className='modal-btn'>Confirm</button>
+                <input type='text' className='modal-input' onChange={this.handleChange}/>
+                <button className='modal-btn' onClick={this.handleSubmit}>Confirm</button>
               </form>
             </div>
 
