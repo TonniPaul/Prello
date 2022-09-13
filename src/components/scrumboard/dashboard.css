@@ -1,0 +1,81 @@
+.dashboard{
+   position: relative;
+}.logout{
+   position: absolute;
+   bottom: 10px;
+   z-index: -30;
+   right: 2rem;
+}
+.welcome-text{
+   margin: 0 0 1rem;
+}
+.card-div{
+   display: flex;
+   flex-grow: 3;
+   grid-template-columns: repeat(2, 300px);
+   gap: 30px;
+   margin: auto;
+   border-radius: 12px;
+}
+.card{
+   width: 350px;
+   margin:0;
+   height: 350px;
+   box-shadow: var(--boxShadow);
+}
+.card--header{
+   text-align: center;
+   background-color: var(--carton);
+   padding: 1em 0;
+   color: var(--cartonText);
+
+}
+#add--task--btn{
+   margin-top: 1rem;
+}
+
+/* ======MODAL STYLING ====== */
+#modal{
+   width: 300px;
+   background: var(--primaryText);
+   margin: 0 0 2rem;
+   border-radius: 0 0 20px 20px;
+   box-shadow: var(--boxShadow);
+}
+.modal-btn{
+   margin: 0 1rem 1rem;
+   padding: .3rem;
+   text-transform: capitalize !important;
+   background: green;
+   letter-spacing: 2px;
+}
+.modal-header{
+   display: flex;
+   justify-content: space-between;
+   background-color: var(--primary) ;
+   color: var(--primaryText);
+   padding: .2rem;
+}
+.x{
+   padding: 0  .5rem;
+   /* border-left: 2px solid var(--primaryText); */
+   background: red;
+   cursor: pointer;
+}
+.show{
+   display: block;
+   position: absolute;
+   bottom: 0px;
+   left: 80px;
+}
+.hidden{
+   display: none;
+}
+.modal-input{
+   margin: 2rem 1rem 0;
+}
+.hide-btn{
+   visibility: hidden;
+   pointer-events: none;
+   transition: none;
+}
