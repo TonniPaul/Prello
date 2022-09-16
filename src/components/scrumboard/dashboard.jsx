@@ -76,7 +76,9 @@ export default class Dashboard extends Component {
         </div>
         )
       })}
-        <button className='logout'><Link to='/' className='links'>Log Out</Link> </button>      
+      <Link to='/'>
+        <button className='logout'> Log Out </button>  
+      </Link>    
       </div>
     )
   }

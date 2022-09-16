@@ -23,7 +23,7 @@
    margin: 5px;
    padding: .2rem 1rem;
    /* border: 2px solid var(--cartonText); */
-   filter: drop-shadow(2px 2px 4px var(--cartonText));
+   filter: drop-shadow(2px 2px 4px var(--primary));
    box-shadow: 2px 3px 5px var(--cartonText);
    color: var(--cartonText);
 }

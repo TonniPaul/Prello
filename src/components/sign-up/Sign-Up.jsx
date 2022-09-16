@@ -38,7 +38,7 @@ const SignUp = () => {
          return(
             <div key={key} className='form'>
                <label htmlFor={input.name}>{input.label}</label>
-               <input type = {input.type} name={input.name} {...register(input.name)} />
+               <input type = {input.type} name={input.name} {...register(input.name)} id={errors[input.name] ? 'red' : ''} />
                <span className='error-message'>{errors[input.name]?.message}</span>
             </div>
 )
