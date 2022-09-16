@@ -9,31 +9,7 @@
 .welcome-text{
    margin: 0 0 1rem;
 }
-.card-div{
-   display: flex;
-   flex-grow: 3;
-   grid-template-columns: repeat(2, 300px);
-   gap: 30px;
-   margin: auto;
-   border-radius: 12px;
-}
-.card{
-   width: 350px;
-   margin:0;
-   height: 350px;
-   box-shadow: var(--boxShadow);
-}
-.card--header{
-   text-align: center;
-   background-color: var(--carton);
-   padding: 1em 0;
-   color: var(--cartonText);
 
-}
-.task-text{
-   padding: .2rem 1rem;
-   border-bottom: 2px solid var(--cartonText);
-}
 #add--task--btn{
    margin-top: 1rem;
 }

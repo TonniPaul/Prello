@@ -1,0 +1,29 @@
+.card-div{
+   display: flex;
+   flex-grow: 3;
+   grid-template-columns: repeat(2, 300px);
+   gap: 30px;
+   margin: auto;
+   border-radius: 12px;
+}
+.card{
+   width: 350px;
+   margin:0;
+   height: 350px;
+   box-shadow: var(--boxShadow);
+}
+.card--header{
+   text-align: center;
+   background-color: var(--carton);
+   padding: 1em 0;
+   color: var(--cartonText);
+
+}
+.task-text{
+   margin: 5px;
+   padding: .2rem 1rem;
+   /* border: 2px solid var(--cartonText); */
+   filter: drop-shadow(2px 2px 4px var(--cartonText));
+   box-shadow: 2px 3px 5px var(--cartonText);
+   color: var(--cartonText);
+}

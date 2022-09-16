@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Data from '../../static/data'
+import Tasks from '../task/Tasks'
 import './dashboard.css'
 import { Link } from 'react-router-dom'
 
@@ -56,16 +57,7 @@ export default class Dashboard extends Component {
               <p className='welcome-text'> Hello {input.fullname}, Welcome to your Dashboard</p>
               {console.log('Logged in as ', input.fullname)}
 
-              <div className='card-div ' >
-                <div className='card'>
-                  <h3 className='card--header'> Weekly Tasks</h3>
-                  <p className='task-text'>{this.state.task}</p>
-                </div>
-
-                <div className='card'>
-                  <h3 className='card--header'> Daily Tasks</h3>
-                </div>
-              </div>
+            <Tasks />
 
             <div id='modal' className={this.state.isOpen ? 'show' : 'hidden' }>
               <div className='modal-header'>
