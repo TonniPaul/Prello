@@ -9,7 +9,7 @@
 .card{
    width: 350px;
    margin:0;
-   height: 350px;
+   height: max-content;
    box-shadow: var(--boxShadow);
 }
 .card--header{
@@ -22,8 +22,9 @@
 .task-text{
    margin: 5px;
    padding: .2rem 1rem;
-   /* border: 2px solid var(--cartonText); */
+   background: var(--primaryText);
    filter: drop-shadow(2px 2px 4px var(--primary));
    box-shadow: 2px 3px 5px var(--cartonText);
    color: var(--cartonText);
+   user-select: none;
 }

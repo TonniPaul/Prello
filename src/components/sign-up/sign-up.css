@@ -37,14 +37,9 @@ button {
    background: rgb(16, 16, 90);
    color: #fff;
 }
-/* button:hover {
-   background: #fff;
-   color: red;
-   box-shadow: 0px 0px 7px rgb(16, 16, 90);
-} */
 .error-message{
    color: red;
-   font-size: 12px;
+   font-size: 10px;
    font-weight: 600;
    font-style: italic;
 }

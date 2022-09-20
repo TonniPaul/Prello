@@ -49,7 +49,7 @@ export default class Dashboard extends Component {
             <nav key={key} className='nav'>
               <h1>ChatScrum</h1>
               <div>
-                <p>User Type:{input.userType}</p>
+                <p>User Type: {input.userType}</p>
                 <p>Project Name:{input.projectName}</p>
               </div>
             </nav>

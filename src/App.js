@@ -12,7 +12,6 @@ function App() {
           <Route path='/' element={<Hero />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/signup' element={<SignUp />} />
-          <Route path='/signin/dashboard' element={<Dashboard />} />
           <Route path='/dashboard' element={<Dashboard />} />
       </Routes>
       </div>

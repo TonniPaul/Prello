@@ -11,8 +11,8 @@ const SignIn = () => {
    const schema = yup.object().shape({
       email : yup.string().email('This is not a valid email address').required('input a valid email'),
       password: yup.string().required('input a valid password').matches(
-         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/,
-         "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
+         /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{6,}$/,
+         "Must Contain 6 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"
       )
    })
    const { register, handleSubmit, formState: {errors} } = useForm({
