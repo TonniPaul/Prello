@@ -1,6 +1,6 @@
 import task from "../../static/tasks";
 import './tasks.css';
-import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd'
+import { DragDropContext, Droppable, Draggable} from 'react-beautiful-dnd';
 import { useState, useEffect } from "react";
 
 const Tasks = () => {
@@ -53,8 +53,8 @@ const Tasks = () => {
 
   return (
     <div className='card-div ' >
-      <DragDropContext> 
-        <Droppable droppableId='taskweekly' onDragEnd={onDragEnd} >
+      <DragDropContext onDragEnd={onDragEnd}> 
+        <Droppable droppableId='taskweekly' >
           {(provided,) => (            
             <div className='card' {...provided.droppableProps} ref={provided.innerRef}>
               <h3 className='card--header'> Weekly Tasks</h3>

@@ -1,43 +1,21 @@
 import React, { Component } from 'react'
 import Data from '../../static/data'
 import Tasks from '../task/Tasks'
-import './dashboard.css'
-import { Link } from 'react-router-dom'
+import './dashboard.css';
+import AddTask from '../addtask/AddTask'
 
 export default class Dashboard extends Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
 
     this.state = {
       data: Data,
       isOpen: false,
-      task: null
+      task: []
     }
   }
 
-  openModal = () => {
-    this.setState({
-      isOpen: true
-    })
-  }
-  closeModal = () => {
-    this.setState({
-      isOpen: false
-    })
-  }
-
-  handleChange = (e) => {
-    this.setState({
-      task: e.target.value
-    })
-  }
-
-  handleSubmit = (e) => {
-    e.preventDefault();
-    this.setState({
-      isOpen: false
-    })
-  }
+  
   
   render() {
     return (
@@ -45,8 +23,8 @@ export default class Dashboard extends Component {
       <div className='dashboard'>
       {Data.map( (input, key) => {
         return(
-          <div>
-            <nav key={key} className='nav'>
+          <div key={key}>
+            <nav className='nav'>
               <h1>ChatScrum</h1>
               <div>
                 <p>User Type: {input.userType}</p>
@@ -58,27 +36,12 @@ export default class Dashboard extends Component {
               {console.log('Logged in as ', input.fullname)}
 
             <Tasks />
-
-            <div id='modal' className={this.state.isOpen ? 'show' : 'hidden' }>
-              <div className='modal-header'>
-                <h3>Add a new task</h3>
-                <h3 className='x' onClick={this.closeModal}>X</h3>
-              </div>
-              <form>
-                <input type='text' className='modal-input' onChange={this.handleChange}/>
-                <button className='modal-btn' onClick={this.handleSubmit}>Confirm</button>
-              </form>
             </div>
 
-              <button id='add--task--btn' onClick={() => this.openModal() } className={ this.state.isOpen ? 'hide-btn': ''}>add tasks</button>
-            </div>
-
+            <AddTask />
         </div>
         )
-      })}
-      <Link to='/'>
-        <button className='logout'> Log Out </button>  
-      </Link>    
+      })} 
       </div>
     )
   }
