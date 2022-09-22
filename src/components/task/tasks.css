@@ -20,10 +20,10 @@
 
 }
 .task-text{
-   margin: 5px;
+   margin: 10px 5px;
    padding: .2rem 1rem;
    background: var(--primaryText);
-   filter: drop-shadow(2px 2px 4px var(--primary));
+   filter: drop-shadow(6px 6px 6px var(--primary));
    box-shadow: 2px 3px 5px var(--cartonText);
    color: var(--cartonText);
    user-select: none;

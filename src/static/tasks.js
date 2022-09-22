@@ -1,5 +1,4 @@
-const tasklist = {
-   weekly : [
+const task = [
       {
          id: 'one',
          item: 'Wake Up'
@@ -28,33 +27,7 @@ const tasklist = {
          id: 'seven',
          item: 'Write more Codes'
       }
-   ],
-   daily : [
-      {
-         id: 'one',
-         item: 'W'
-      },
-      {
-         id: 'two',
-         item: 'P'
-      },
-      {
-         id: 'three',
-         item: 'Fr'
-      },
-      {
-         id: 'four',
-         item: ' Eat '
-      },
-      {
-         id: 'five',
-         item: 'Write'
-      },
-      {
-         id: 'six',
-         item: 'Take Break'
-      },
-   ]
-}
 
-export default tasklist;
+]
+
+export default task;
