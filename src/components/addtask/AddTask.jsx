@@ -17,7 +17,7 @@ export class AddTask extends Component {
   
     handleChange = (e) => {
       this.setState({
-        task: e.target.value
+        content: e.target.value
       })
     }
   
@@ -25,6 +25,11 @@ export class AddTask extends Component {
       e.preventDefault();
       this.setState({
         isOpen: false
+      })
+      console.log(this.state)
+      this.props.addTask(this.state)
+      this.setState({
+         content: ''
       })
     }
   render() {
@@ -36,7 +41,7 @@ export class AddTask extends Component {
                 <h3 className='x' onClick={this.closeModal}>X</h3>
               </div>
               <form>
-                <input type='text' className='modal-input' onChange={this.handleChange}/>
+                <input type='text' className='modal-input' onChange={this.handleChange} value={this.state.content}/>
                 <button className='modal-btn' onClick={this.handleSubmit}>Confirm</button>
               </form>
               

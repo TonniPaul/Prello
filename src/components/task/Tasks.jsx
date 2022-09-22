@@ -58,7 +58,7 @@ const Tasks = () => {
           {(provided,) => (            
             <div className='card' {...provided.droppableProps} ref={provided.innerRef}>
               <h3 className='card--header'> Weekly Tasks</h3>
-              {weekly.map(({id, item}, index) => {
+              {weekly.map(({id, content}, index) => {
                 return(
                   <Draggable key={id} draggableId={id} index={index}>
                   {(provided, snapshot) => (
@@ -72,7 +72,7 @@ const Tasks = () => {
                         //   marginBottom: snapshot.isDragging ? '10px' : 'inherit'
                         // }}
                       >
-                        {item}
+                        {content}
                       </p>
                   )}
                   

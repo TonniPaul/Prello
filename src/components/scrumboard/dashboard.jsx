@@ -3,6 +3,7 @@ import Data from '../../static/data'
 import Tasks from '../task/Tasks'
 import './dashboard.css';
 import AddTask from '../addtask/AddTask'
+import Users from '../users/Users';
 
 export default class Dashboard extends Component {
   constructor(props){
@@ -36,9 +37,11 @@ export default class Dashboard extends Component {
               {console.log('Logged in as ', input.fullname)}
 
             <Tasks />
+            <AddTask />
+
+            <Users />
             </div>
 
-            <AddTask />
         </div>
         )
       })} 

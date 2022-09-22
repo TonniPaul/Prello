@@ -1,32 +1,13 @@
+import { v4 as uuid } from "uuid";
+
+const id = uuid()
 const task = [
-      {
-         id: 'one',
-         item: 'Wake Up'
-      },
-      {
-         id: 'two',
-         item: 'Pray'
-      },
-      {
-         id: 'three',
-         item: 'Freshen Up'
-      },
-      {
-         id: 'four',
-         item: ' Eat '
-      },
-      {
-         id: 'five',
-         item: 'Write Code'
-      },
-      {
-         id: 'six',
-         item: 'Take Break'
-      },
-      {
-         id: 'seven',
-         item: 'Write more Codes'
-      }
+   { id: uuid(),content: "Wake Up" },
+   { id: uuid(), content: " Freshen Up" },
+   { id: uuid(), content: "Eat" },
+   { id: uuid(), content: "Code" },
+   { id: uuid(), content: "Take Break" },
+   { id: uuid(), content: "Write More Code" },
 
 ]
 
