@@ -26,7 +26,6 @@ export class AddTask extends Component {
       this.setState({
         isOpen: false
       })
-      console.log(this.state)
       this.props.addTask(this.state)
       this.setState({
          content: ''

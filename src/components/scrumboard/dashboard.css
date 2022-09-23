@@ -1,5 +1,6 @@
 .dashboard{
    position: relative;
+   min-height: 100vh;
 }.logout{
    position: absolute;
    bottom: 10px;

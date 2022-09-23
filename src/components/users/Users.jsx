@@ -2,7 +2,6 @@ import './users.css'
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-
 const Users = () => {
    const [ users, setUsers ] = useState([]);
    const [ isLoading, setIsLoading ] = useState(false);
@@ -15,9 +14,6 @@ const Users = () => {
    const closeModal = () => {
       setIsOpen(false)
    }
-
-
-
 
    useEffect(() => {
       axios.get('http://liveapi.chatscrum.com/scrum/api/scrumusers/')
@@ -53,7 +49,6 @@ const Users = () => {
     </div>
   )
 }
-
 
 export default Users;
 
