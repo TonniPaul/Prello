@@ -33,6 +33,7 @@ right: 0;
    gap: 5px;
    position: relative;
 }
+
 .green {
    color: green;
    font-size: 15px;
@@ -76,6 +77,22 @@ right: 0;
    background: var(--carton);
    color: var(--cartonText);
    transform: scale(1.05);
+}
+@media (max-width: 500px) {
+   .hide-content{
+      display: none;
+   }
+   .hide-sub-cont{
+      background: none !important;
+      border-radius: 50%;
+      overflow: hidden;
+   }
+   .cnnct{
+      width: max-content;
+   }
+   .sub-cont{
+      width: max-content;
+   }
 }
 
 @keyframes float {

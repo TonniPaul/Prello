@@ -11,6 +11,7 @@
    margin:0;
    height: max-content;
    box-shadow: var(--boxShadow);
+   background: var(--primaryText);
 }
 .card--header{
    text-align: center;
@@ -33,4 +34,15 @@
 }
 .red{
    color: red;
+}
+
+@media(max-width: 500px){
+   .card-div{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+   }
+   .card{
+      width: 100%;
+   }
 }

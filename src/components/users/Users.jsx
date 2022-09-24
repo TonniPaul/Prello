@@ -22,12 +22,12 @@ const Users = () => {
 
   return (
     <div className='user--container'>
-      <div className="sub-cont">
+      <div className={`sub-cont ${ !isOpen && 'hide-sub-cont'}`}>
          <h4 id='user--header' 
  
          > 
-            <p className='cnnct'>
-               Connected Users 
+            <p className={`cnnct ${ !isOpen && 'hide-cnnct'}`}>
+               <p className={` ${ !isOpen && 'hide-content'}`}>Connected Users</p>
                <span className="material-symbols-outlined green"> radio_button_checked</span>
             </p>
             { isOpen ?

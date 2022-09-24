@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
 
   deleteTask = (id) => {
     const tasks = this.state.tasks.filter(task => {
-      return task.is !== id
+      return task.id === id
     })
     this.setState({
       tasks
@@ -51,7 +51,7 @@ export default class Dashboard extends Component {
       <div>
       {Data.map( (input, key) => {
         return(
-          <div key={key}className='dashboard'>
+          <div key={key} className='dashboard'>
             <nav className='nav'>
               <Logo/>
               <div>

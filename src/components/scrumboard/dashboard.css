@@ -1,6 +1,11 @@
 .dashboard{
    position: relative;
    min-height: 100vh;
+   background-image: url('/public/images/wireframe.svg');
+   background-size: 40%;
+   background-repeat: no-repeat;
+   background-position-x: center;
+   background-position-y: bottom;
 }.logout{
    position: absolute;
    bottom: 10px;
@@ -9,6 +14,9 @@
 }
 .welcome-text{
    margin: 0 0 1rem;
+   background-color: var(--primaryText);
+   box-shadow: var(--boxShadow);
+   padding: 1rem;
 }
 
 #add--task--btn{
@@ -59,4 +67,10 @@
    visibility: hidden;
    pointer-events: none;
    transition: none;
+}
+@media (max-width: 900px){
+   .dashboard{
+      background-size: 80%;
+      background-position: center;
+   }
 }
