@@ -1,0 +1,17 @@
+.backdrop{
+   background: var(--primaryText);
+   position: relative;
+   height: max-content;
+}
+.backdrop-nav{
+   width: 100%;
+   margin: 0;
+   background: var(--primary);
+   display: flex;
+   height: max-content;
+   padding: 10px;
+   align-items: center;
+}
+.logo{
+   width: 150px;
+}

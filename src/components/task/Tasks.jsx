@@ -1,11 +1,15 @@
 import task from '../../static/tasks';
 import './tasks.css';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
-const Tasks = () => {
-  const [weekly, setWeekly] = useState(task);
+const Tasks = ({data, deleteTask}) => {
+  const [weekly, setWeekly] = useState([]);
   const [daily, setDaily] = useState([]);
+
+  useEffect(() => {
+    setWeekly(data)
+  },[data])
 
   const onDragEnd = (result) => {
     const { destination, source } = result;
@@ -78,7 +82,7 @@ const Tasks = () => {
               ref={provided.innerRef}
             >
               <h3 className="card--header"> Weekly Tasks</h3>
-              {weekly.map(({ id, item }, index) => {
+              {weekly.map(({ id, content }, index) => {
                 return (
                   <Draggable key={id} draggableId={id} index={index}>
                     {(provided, snapshot) => (
@@ -99,7 +103,8 @@ const Tasks = () => {
                             ...provided.draggableProps.style
                         }}
                       >
-                        {item}
+                        {content}
+                        <span className="material-symbols-outlined red" onClick={() => {deleteTask(id)}}> delete</span>
                       </p>
                     )}
                   </Draggable>
@@ -119,7 +124,7 @@ const Tasks = () => {
               ref={provided.innerRef}
             >
               <h3 className="card--header"> Daily Tasks</h3>
-              {daily.map(({ id, item }, index) => {
+              {daily.map(({ id, content }, index) => {
                 return (
                   <Draggable key={id} draggableId={id} index={index}>
                     {(provided, snapshot) => (
@@ -140,7 +145,8 @@ const Tasks = () => {
                             ...provided.draggableProps.style
                         }}
                       >
-                        {item}
+                        {content}
+                        <span className="material-symbols-outlined red" onClick={() => {deleteTask(id)}}> delete</span>
                       </p>
                     )}
                   </Draggable>

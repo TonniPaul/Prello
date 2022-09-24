@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Reem+Kufi+Fun:wght@600;700&display=swap');
+
 form{
    display: flex;
    gap: .5rem;
@@ -6,20 +8,25 @@ form{
 }
 .form{   
    display: flex;
-   gap: .5rem;
+   gap: .3rem;
    flex-direction: column;
-
 }
 label{
    text-transform: capitalize;
-   font-weight: 800;
-   font-size: 18px;
+   font-weight: 500;
+   font-size: 15px;
+   font-style: italic;
+   color: var(--primary);
 }
 input, select {
-   padding: .5rem ;
+   padding: .6rem ;
    outline: none;
-   border: 1px solid;
+   border: 2.5px solid var(--borderColor);
    border-radius: 5px;
+   background: var(--powderBlue);
+}
+input[type = 'text'] {
+   text-transform: capitalize;
 }
 
 option{
@@ -42,4 +49,46 @@ button {
    font-size: 10px;
    font-weight: 600;
    font-style: italic;
+}
+.signup-hero{
+   width: 100%;
+   background: var(--primaryText);
+   display: flex;
+   height: 100%;
+   align-items: center;
+   justify-content: center;
+}
+.sign-up-img{
+   height: 87vh;
+   padding: 15px;
+}
+.header-text{
+   color: var(--primary);
+   font-size: 40px;
+   font-family: 'Kaushan Script';
+   padding: 0 0 1.5rem;
+}
+
+.link{
+   text-decoration: none;
+   font-weight: 600;
+   color: var(--primary);
+}
+.call-to-action{
+   font-size: 14px;
+   margin-top: 2rem;
+}
+
+@media(max-width: 500px){
+   .call-to-action{
+      text-align: center;
+      font-size: 12px;
+   }
+   .sign-up-img{
+      display: none;
+   }
+   .header-text{
+      text-align: center;
+      font-size: 30px;
+   }
 }

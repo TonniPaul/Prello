@@ -5,6 +5,8 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
 import Dashboard from '../scrumboard/dashboard';
+import Backdrop from '../UI/backdrop/Backdrop';
+import signInImg from '../../images/robot-checking-user-profile.svg';
 
 
 const SignIn = () => {
@@ -27,23 +29,27 @@ const SignIn = () => {
    
    }
   return (
-    <div className='padding'>
-      <h1>Already have an account? <span>Sign in here!</span></h1>
-      <form onSubmit={ handleSubmit(onSubmit) } >
-         {contentSignUp.inputs2.map((input,key) =>{
-            return(
-               <div key={key} className='form'>
-                  <label htmlFor={input.name}>{input.name}</label>
-                  <input type={input.type} name ={input.name} {...register(input.name)} id={errors[input.name] ? 'red' : ''} />
-                  <small className='error-message' >{errors[input.name]?.message}</small>
-               </div>
-            )
-         })}
-         <button><Link to='/dashboard' className='links'>Sign In</Link></button>
-      </form>
-      <p>Don't have an account? <Link to='/signup'>Sign Up</Link></p>
-      <p> Back to <Link to='/'>Home</Link></p>
-    </div>
+   <Backdrop className='content-div sign-in-grid'>
+      <div className="signup-hero">
+         <img src={signInImg} alt="." className='sign-up-img' />
+      </div>
+      <div className='global-container'>
+         <h1 className="header-text"> Sign in</h1>
+         <form onSubmit={ handleSubmit(onSubmit) } >
+            {contentSignUp.inputs2.map((input,key) =>{
+               return(
+                  <div key={key} className='form'>
+                     <label htmlFor={input.name}>{input.name}</label>
+                     <input type={input.type} name ={input.name} {...register(input.name)} id={errors[input.name] ? 'red' : ''} />
+                     <small className='error-message' >{errors[input.name]?.message}</small>
+                  </div>
+               )
+            })}
+            <button><Link to='/dashboard' className='links'>Sign In</Link></button>
+         </form>
+         <p className='call-to-action'>Don't have an account? <Link to='/signup' className='link'>Sign Up</Link></p>
+      </div>
+   </Backdrop>
   )
 }
 

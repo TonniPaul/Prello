@@ -4,6 +4,8 @@
   --boxShadow: 3px 3px 5px #3B3229;
   --carton: #ACACAC;
   --cartonText: #3B3229;
+  --powderBlue: #b6bdd6;
+  --borderColor: #77536F;
 }
 *{
   margin: 0;
@@ -19,9 +21,27 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: var(--primaryText);
+  user-select: none;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.global-container{
+  background: var(--primaryText);
+  padding: 2rem;
+  position: relative;
+}
+.content-div{
+  display: grid;
+  height: inherit;
+  grid-template-columns:1fr 2fr;
+  user-select: none;
+  padding: 0 32px;
+}
+@media(max-width: 500px){
+  .content-div{
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .global-container{
+    width: 100%;
+    background-image: url('./images/welcome-1763824.png'); 
+  }
 }

@@ -1,12 +1,12 @@
 import { v4 as uuid } from "uuid";
 
 const task = [
-   { id: uuid(),item: "Wake Up" },
-   { id: uuid(), item: " Freshen Up" },
-   { id: uuid(), item: "Eat" },
-   { id: uuid(), item: "Code" },
-   { id: uuid(), item: "Take Break" },
-   { id: uuid(), item: "Write More Code" },
+   { id: uuid(),content: "Wake Up" },
+   { id: uuid(), content: " Freshen Up" },
+   { id: uuid(), content: "Eat" },
+   { id: uuid(), content: "Code" },
+   { id: uuid(), content: "Take Break" },
+   { id: uuid(), content: "Write More Code" },
 
 ]
 

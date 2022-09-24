@@ -5,7 +5,9 @@ import './dashboard.css';
 import AddTask from '../addtask/AddTask'
 import Users from '../users/Users';
 import { v4 as uuid } from 'uuid';
-import axios from 'axios';
+// import task from '../../static/tasks';
+import Logo from '../UI/backdrop/Logo';
+// import axios from 'axios';
 
 export default class Dashboard extends Component {
   constructor(props){
@@ -14,14 +16,23 @@ export default class Dashboard extends Component {
     this.state = {
       data: Data,
       isOpen: false,
-      task: []
+      tasks: []
     }
   }
   addTask = (task) =>{
     task.id = uuid()
-    task = [...this.state.task, task]
+    let tasks = [...this.state.tasks, task]
     this.setState({
-      task
+      tasks
+    })
+  }
+
+  deleteTask = (id) => {
+    const tasks = this.state.tasks.filter(task => {
+      return task.is !== id
+    })
+    this.setState({
+      tasks
     })
   }
 // componentDidMount() {
@@ -42,7 +53,7 @@ export default class Dashboard extends Component {
         return(
           <div key={key}className='dashboard'>
             <nav className='nav'>
-              <h1>ChatScrum</h1>
+              <Logo/>
               <div>
                 <p>User Type: {input.userType}</p>
                 <p>Project Name:{input.projectName}</p>
@@ -52,7 +63,7 @@ export default class Dashboard extends Component {
               <p className='welcome-text'> Hello {input.fullname}, Welcome to your Dashboard</p>
               {console.log('Logged in as ', input.fullname)}
 
-            <Tasks data={this.state.task}/>
+            <Tasks data={this.state.tasks} deleteTask={this.deleteTask}/>
             <AddTask addTask ={this.addTask} />
 
             <Users />

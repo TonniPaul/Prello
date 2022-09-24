@@ -1,6 +1,11 @@
 #red {
    border: 1px solid red;
 }
-/* #blue {
-   border: 1px solid blue;
-} */
+.sign-in-grid{
+   grid-template-columns:2fr 1fr !important;
+}
+@media (max-width: 500px) {
+   .sign-in-grid{
+      width: 100% !important;
+   }
+}

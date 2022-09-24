@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react';
 
 const Users = () => {
    const [ users, setUsers ] = useState([]);
-   const [ isLoading, setIsLoading ] = useState(false);
+   // const [ isLoading, setIsLoading ] = useState(false);
    const [ isOpen, setIsOpen] = useState(false)
 
    const openModal = () => {
@@ -24,22 +24,32 @@ const Users = () => {
     <div className='user--container'>
       <div className="sub-cont">
          <h4 id='user--header' 
-            onClick={!isOpen ? openModal : closeModal}
+ 
          > 
             <p className='cnnct'>
                Connected Users 
-               <span class="material-symbols-outlined green"> radio_button_checked</span>
+               <span className="material-symbols-outlined green"> radio_button_checked</span>
             </p>
             { isOpen ?
-               <span className="material-symbols-outlined btn">keyboard_double_arrow_down</span> :
-               <span className="material-symbols-outlined btn">keyboard_double_arrow_up</span> 
+               <span 
+                  className="material-symbols-outlined btn"
+                  onClick={!isOpen ? openModal : closeModal}
+               >
+                  keyboard_double_arrow_down
+               </span> :
+               <span 
+                  className="material-symbols-outlined btn"
+                  onClick={!isOpen ? openModal : closeModal}
+               >
+                  keyboard_double_arrow_up
+               </span> 
             }
          </h4>
          <div className='users-data'>
             {users.map(({nickname, id}) => {
                return(
                   <div key={id} className='user-data'  id={isOpen? 'showw' : 'hiddden'} >
-                  <span class="material-symbols-outlined">person</span>
+                  <span className="material-symbols-outlined">person</span>
                   <p>{nickname} </p>
                   </div>
                )

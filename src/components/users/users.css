@@ -10,6 +10,7 @@ right: 0;
    width: 350px;
    margin: 15px 0;
    box-shadow: var(--boxShadow);
+   background: var(--primaryText);
    position: absolute;
    bottom: 0;
    right: 15px;
@@ -39,6 +40,12 @@ right: 0;
 }
 .btn{
    cursor: pointer;
+   background: none;
+   transform: translatey(0px);
+   animation: float 1s ease-in-out infinite;
+}
+.btn:hover{
+   animation: float 10000s ease-in-out infinite;
 }
 
 .circle{
@@ -69,4 +76,19 @@ right: 0;
    background: var(--carton);
    color: var(--cartonText);
    transform: scale(1.05);
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(.1875rem);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0);
+	}
 }

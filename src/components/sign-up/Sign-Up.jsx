@@ -4,6 +4,8 @@ import { useForm } from 'react-hook-form';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Link } from 'react-router-dom';
+import Backdrop from '../UI/backdrop/Backdrop';
+import signImg from '../../images/sign-up-form-3798675.png';
 
 const SignUp = () => {
 
@@ -21,39 +23,53 @@ const SignUp = () => {
                "Must Contain 8 Characters, One Uppercase, One Lowercase, One Number and One Special Case Character"),
       confirmPassword: yup.string()
             .oneOf([yup.ref('password'), null], "Password mismatch!!")
-            .required('This field is required')
+            .required('This is a required field')
    });
    
    const { register, handleSubmit, formState: {errors} } = useForm({
       resolver : yupResolver(schema)
    });
 
-   const onSubmit = (data) => console.log(data)
+   const onSubmit = (data) => {
+      alert(`
+      Hello ${data.fullname}, Your signup is successful!
+
+      Your email address is:  ${data.email} 
+
+      Your Password is:  ${data.password}.`)
+      console.log(data)
+      return <p>Hello</p>
+   }
 
   return (
-    <div className='sign-up padding'>
-      <h1>Don't have an account? <span>Sign up here</span></h1>
-      <form onSubmit={handleSubmit(onSubmit)}>
-      {contentSignUp.inputs.map((input, key) => {
-         return(
-            <div key={key} className='form'>
-               <label htmlFor={input.name}>{input.label}</label>
-               <input type = {input.type} name={input.name} {...register(input.name)} id={errors[input.name] ? 'red' : ''} />
-               <span className='error-message'>{errors[input.name]?.message}</span>
-            </div>
-)
-})}
+   <Backdrop className='content-div'>
 
+      <div className='global-container'>
+         <h1 className="header-text"> Sign Up</h1>
+         <form onSubmit={handleSubmit(onSubmit)}>
+         {contentSignUp.inputs.map((input, key) => {
+            return(
+               <div key={key} className='form'>
+                  <label htmlFor={input.name}>{input.label}</label>
+                  <input type = {input.type} name={input.name} {...register(input.name)} id={errors[input.name] ? 'red' : ''} />
+                  <span className='error-message'>{errors[input.name]?.message}</span>
+               </div>
+         )
+         })}
 
-         <select id='options'>
-            <option value='Developer'> Developer</option>
-            <option value='Owner'> Owner</option>
-         </select>
-         <button>Sign Up</button>
-      </form>
-      <p>Have account? <Link to='/signin'>Sign In </Link></p>
-      <p> Back to <Link to='/'>Home</Link></p>
-    </div>
+            <select id='options'>
+               <option value='Developer'> Developer</option>
+               <option value='Owner'> Owner</option>
+            </select>
+            <button>Sign Up</button>
+         </form>
+         <p className='call-to-action'>Already have an account? <Link to='/signin' className='link'>Sign In </Link></p>
+      </div>
+      <div className="signup-hero">
+         <img src={signImg} alt="." className='sign-up-img' />
+      </div>
+   </Backdrop>
+
   )
 }
 
