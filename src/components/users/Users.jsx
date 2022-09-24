@@ -21,11 +21,13 @@ const Users = () => {
    }, [])
 
   return (
-    <div className='user--container'>
+    <div className={`user--container`}>
       <div className={`sub-cont ${ !isOpen && 'hide-sub-cont'}`}>
          <h4 id='user--header'
             style={{
-               bottom: !isOpen ? 0 : ''
+               bottom: !isOpen ? 10 : '',
+               right: !isOpen ? '30px' : '',
+               width: isOpen ? 'inherit' : ''
             }}
          > 
             <p className={`cnnct ${ !isOpen && 'hide-cnnct'}`}>
@@ -53,11 +55,11 @@ const Users = () => {
             }}
          ></div>
          <div className='users-data'>
-            {users.map(({username, id, avatar}) => {
+            {users.map(({username, id, avatar, last_name}) => {
                return(
                   <div key={id} className='user-data'  id={isOpen? 'showw' : 'hiddden'} >
                   <img src={avatar} alt={username} className='avartarIcon' />
-                  <p>{username} </p>
+                  <p>{username} {last_name} </p>
                   </div>
                )
             })}

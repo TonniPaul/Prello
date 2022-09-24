@@ -6,11 +6,6 @@
    background-repeat: no-repeat;
    background-position-x: center;
    background-position-y: bottom;
-}.logout{
-   position: absolute;
-   bottom: 10px;
-   z-index: -30;
-   right: 2rem;
 }
 .welcome-text{
    margin: 0 0 1rem;
@@ -56,7 +51,7 @@
    display: block;
    position: absolute;
    top: 20px;
-   left: 80px;
+   left: 0;
 }
 .hidden{
    display: none;
@@ -73,5 +68,8 @@
    .dashboard{
       background-size: 80%;
       background-position: center;
+   }
+   .welcome-text {
+      text-align: center;
    }
 }
