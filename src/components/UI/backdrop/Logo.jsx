@@ -1,5 +1,6 @@
 import React from 'react'
-import logo from '../../../images/prello.png'
+import logo from '../../../images/chatscrum.png'
+// import logo from '../../../images/prello.png'
 import { Link } from 'react-router-dom'
 
 const Logo = () => {

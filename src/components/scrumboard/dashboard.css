@@ -31,6 +31,7 @@
    border-radius: 0 0 10px 10px;
    box-shadow: var(--boxShadow);
    transition: all 1s ease-in-out;
+   position: relative;
 }
 .modal-btn{
    margin: 0 1rem 3rem;
@@ -54,7 +55,7 @@
 .show{
    display: block;
    position: absolute;
-   bottom: 0px;
+   top: 20px;
    left: 80px;
 }
 .hidden{

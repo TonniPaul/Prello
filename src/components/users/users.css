@@ -4,7 +4,11 @@ display: flex;
 justify-content: flex-end;
 position: absolute;
 bottom: 0;
+max-height: 300px;
 right: 0;
+}
+.avartarIcon{
+   height: 25px;
 }
 .sub-cont{
    width: 350px;
@@ -14,6 +18,9 @@ right: 0;
    position: absolute;
    bottom: 0;
    right: 15px;
+   max-height: 400px;
+   flex-wrap: nowrap;
+   overflow: auto;
    display: flex;
    flex-direction: column;
 }
@@ -26,6 +33,17 @@ right: 0;
    align-items: center;
    user-select: none;
    transition: all 4s ease-in-out;
+   position: fixed;
+   width: inherit;
+   z-index: 30;
+   margin-bottom: 30px;
+}
+.empty{
+   height: 100px;
+   margin-top: 50px;
+}
+.no{
+   display: none;
 }
 .cnnct{
    display: flex;
@@ -72,6 +90,7 @@ right: 0;
    font-weight: 700;
    text-transform: capitalize;
    transition: all .4s ease-in-out;
+   position: relative;
 }
 #showw:hover{
    background: var(--carton);

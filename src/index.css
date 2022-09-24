@@ -45,3 +45,16 @@ body {
     background-image: url('./images/welcome-1763824.png'); 
   }
 }
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--carton); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--cartonText); 
+  
+}
+ 
+ 
