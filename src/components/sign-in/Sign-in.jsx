@@ -1,10 +1,9 @@
 import './sign-in.css'
 import contentSignUp from '../../static/objectFiles';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
-import Dashboard from '../scrumboard/dashboard';
 import Backdrop from '../UI/backdrop/Backdrop';
 import signInImg from '../../images/robot-checking-user-profile.svg';
 
@@ -20,13 +19,9 @@ const SignIn = () => {
    const { register, handleSubmit, formState: {errors} } = useForm({
       resolver: yupResolver(schema)
    })
-
-   const onSubmit = (data) => {
-      alert(data)
-      return(
-         <Dashboard/>
-      )
-   
+   const navigate = useNavigate()
+   const onSubmit = () => {
+         navigate('/dashboard')
    }
   return (
    <Backdrop className='content-div sign-in-grid'>
@@ -45,7 +40,7 @@ const SignIn = () => {
                   </div>
                )
             })}
-            <button><Link to='/dashboard' className='links'>Sign In</Link></button>
+            <button>Sign In</button>
          </form>
          <p className='call-to-action'>Don't have an account? <Link to='/signup' className='link'>Sign Up</Link></p>
       </div>
@@ -54,3 +49,5 @@ const SignIn = () => {
 }
 
 export default SignIn;
+
+// redirecting to new page on succesful validation in yup?

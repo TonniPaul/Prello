@@ -1,5 +1,6 @@
 #red {
-   border: 1px solid red;
+   border: 3px solid red;
+   background-color: var(--white);
 }
 .sign-in-grid{
    grid-template-columns:2fr 1fr !important;

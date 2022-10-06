@@ -3,7 +3,7 @@ import contentSignUp from '../../static/objectFiles';
 import { useForm } from 'react-hook-form';
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Backdrop from '../UI/backdrop/Backdrop';
 import signImg from '../../images/sign-up-form-3798675.png';
 
@@ -29,29 +29,22 @@ const SignUp = () => {
    const { register, handleSubmit, formState: {errors} } = useForm({
       resolver : yupResolver(schema)
    });
-
+   const navigate = useNavigate()
    const onSubmit = (data) => {
-      alert(`
-      Hello ${data.fullname}, Your signup is successful!
-
-      Your email address is:  ${data.email} 
-
-      Your Password is:  ${data.password}.`)
-      console.log(data)
-      return <p>Hello</p>
+      navigate('/signin')
    }
 
   return (
    <Backdrop className='content-div'>
 
-      <div className='global-container'>
+      <div className='global-container '>
          <h1 className="header-text"> Sign Up</h1>
          <form onSubmit={handleSubmit(onSubmit)}>
          {contentSignUp.inputs.map((input, key) => {
             return(
                <div key={key} className='form'>
                   <label htmlFor={input.name}>{input.label}</label>
-                  <input type = {input.type} name={input.name} {...register(input.name)} id={errors[input.name] ? 'red' : ''} />
+                  <input type = {input.type} name={input.name} {...register(input.name)} id={errors[input.name] && 'red'} />
                   <span className='error-message'>{errors[input.name]?.message}</span>
                </div>
          )

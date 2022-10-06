@@ -7,7 +7,7 @@ import Users from '../users/Users';
 import { v4 as uuid } from 'uuid';
 // import task from '../../static/tasks';
 import Logo from '../UI/backdrop/Logo';
-// import axios from 'axios';
+import axios from 'axios';
 
 export default class Dashboard extends Component {
   constructor(props){
@@ -35,14 +35,15 @@ export default class Dashboard extends Component {
       tasks
     })
   }
-// componentDidMount() {
-//   axios.get('http://liveapi.chatscrum.com/scrum/api/scrumgoals/')
-//     .then((res) =>{
-//       this.setState({
-//         task: res.data
-//       })
-//     })
-// }
+  componentDidUpdate(data) {
+  axios.get('http://liveapi.chatscrum.com/scrum/api/scrumgoals/')
+    .then((res) =>{
+      this.setState({
+        task: console.log(res.data.splice(0,10))
+        
+      })
+   })
+}
   
   
   render() {
@@ -64,6 +65,7 @@ export default class Dashboard extends Component {
               {console.log('Logged in as ', input.fullname)}
 
             <Tasks data={this.state.tasks} deleteTask={this.deleteTask}/>
+
             <AddTask addTask ={this.addTask} />
 
             <Users />

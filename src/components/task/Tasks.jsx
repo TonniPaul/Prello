@@ -1,4 +1,3 @@
-import task from '../../static/tasks';
 import './tasks.css';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import { useState, useEffect } from 'react';
@@ -75,9 +74,8 @@ const Tasks = ({data, deleteTask}) => {
       <DragDropContext onDragEnd={onDragEnd}>
         <Droppable droppableId="taskweekly">
           {(provided, snapshot) => (
-            // add some styling when there is a dragover event
             <div
-              className={`card ${snapshot.isDraggingOver && 'card--drag_over'}`}
+              className= 'card'
               {...provided.droppableProps}
               ref={provided.innerRef}
             >
